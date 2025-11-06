@@ -1,17 +1,16 @@
 /* ===== TikTok風デザイン（改良版） ===== */
 
 body {
-  font-family: "Noto Sans JP", "Segoe UI", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   background-color: #000;
   color: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* 縦方向中央 */
-  align-items: center;     /* 横方向中央 */
-  min-height: 100vh;
+  justify-content: center; /* 水平方向中央 */
+  align-items: center;     /* 垂直方向中央 */
+  height: 100vh;           /* ← min-heightから変更：画面の高さを固定 */
   margin: 0;
-  padding: 2em 1em;
-  overflow-x: hidden;
+  padding: 0;              /* ← 余白をリセット */
+  overflow: hidden;        /* ← 画面外の余白をカット */
   position: relative;
 }
 
@@ -115,7 +114,7 @@ body::after {
 /* ===== フッター ===== */
 footer {
   text-align: center;
-  margin-top: 2.5em;
+  margin-top: 1.5em;
   color: #888;
   font-size: 0.9em;
   z-index: 2;
@@ -157,7 +156,8 @@ footer {
 /* ===== ノッチ対応（iPhoneなど） ===== */
 @supports (padding: env(safe-area-inset-top)) {
   body {
-    padding-top: calc(2em + env(safe-area-inset-top));
-    padding-bottom: calc(2em + env(safe-area-inset-bottom));
+    height: calc(100vh - env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
   }
 }
+
