@@ -95,6 +95,28 @@ body::after {
   line-height: 1.6;
 }
 
+.theme-toggle{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  padding: 0.7em 1.2em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #ff0050, #00f2ea);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 80, 0.5),
+              0 0 20px rgba(0, 242, 234, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
 /* SNSリンクボタン */
 .links a {
   display: block;
@@ -129,6 +151,44 @@ footer {
   margin: 2em 0;
   z-index: 2;
 }
+
+/* ライトモードのスタイル */
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+body.light-mode .profile {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .profile h2 {
+  background: linear-gradient(90deg, #ff7eb3, #65d6ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-mode .profile p {
+  color: #444;
+}
+
+body.light-mode .links a {
+  background: linear-gradient(90deg, #65d6ce, #ff7eb3);
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode footer {
+  color: #666;
+}
+
+body.light-mode .theme-toggle {
+  background: linear-gradient(90deg, #65d6ce, #ff7eb3);
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
 /* スマホ対応 */
 @media (max-width: 768px) {
