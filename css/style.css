@@ -158,10 +158,10 @@ footer {
 }
 
 /* ===== ノッチ対応（iPhoneなど） ===== */
-@supports (padding: env(safe-area-inset-top)) {
+/*@supports (padding: env(safe-area-inset-top)) {
   body {
     height: calc(100vh - env(safe-area-inset-top));
     padding-top: env(safe-area-inset-top);
   }
-}
+}*/
 
