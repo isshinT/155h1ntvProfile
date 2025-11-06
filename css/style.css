@@ -1,17 +1,25 @@
+/* 全体の初期化と横スクロール防止 */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* ← 横スクロール完全防止 */
+}
+
 body {
   font-family: "Noto Sans JP", sans-serif;
   background-color: #000;
   color: #fff;
-  margin: 0;
-  padding: 0;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden; /* 横スクロール防止 */
   overflow-y: auto;
-  box-sizing: border-box;
   position: relative;
 }
 
@@ -23,7 +31,7 @@ body::after {
   width: 300px; /* ← サイズ縮小 */
   height: 300px;
   border-radius: 50%;
-  filter: blur(120px); /* ← 少し軽く */
+  filter: blur(120px);
   opacity: 0.5;
   animation: move 10s infinite alternate ease-in-out;
   z-index: 0;
@@ -53,14 +61,13 @@ body::after {
   text-align: center;
   background: rgba(20, 20, 20, 0.75);
   backdrop-filter: blur(10px);
-  padding: 2.5em 1.5em; /* ← 横paddingを調整 */
+  padding: 2.5em 1.5em; /* ← 横padding調整 */
   border-radius: 18px;
   box-shadow: 0 0 25px rgba(255, 0, 80, 0.3),
               0 0 35px rgba(0, 242, 234, 0.3);
   max-width: 420px;
   width: 100%;
   margin: 5vh auto 3vh auto;
-  box-sizing: border-box;
   z-index: 2;
 }
 
@@ -128,7 +135,7 @@ footer {
   .profile {
     width: 95%;
     max-width: 380px;
-    padding: 2em 1em; /* ← 横paddingをさらに調整 */
+    padding: 2em 1em; /* ← 横paddingさらに調整 */
   }
 
   .profile img {
