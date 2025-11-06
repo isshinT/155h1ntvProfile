@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
+  overflow-x: hidden; /* 横スクロール防止 */
   overflow-y: auto;
   box-sizing: border-box;
   position: relative;
@@ -20,25 +20,26 @@ body::before,
 body::after {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 300px; /* ← サイズ縮小 */
+  height: 300px;
   border-radius: 50%;
-  filter: blur(150px);
+  filter: blur(120px); /* ← 少し軽く */
   opacity: 0.5;
   animation: move 10s infinite alternate ease-in-out;
   z-index: 0;
+  pointer-events: none;
 }
 
 body::before {
   background: #00f2ea;
-  top: -100px;
-  left: -100px;
+  top: -80px;
+  left: -80px;
 }
 
 body::after {
   background: #ff0050;
-  bottom: -100px;
-  right: -100px;
+  bottom: -80px;
+  right: -80px;
 }
 
 @keyframes move {
@@ -52,7 +53,7 @@ body::after {
   text-align: center;
   background: rgba(20, 20, 20, 0.75);
   backdrop-filter: blur(10px);
-  padding: 2.5em 2em;
+  padding: 2.5em 1.5em; /* ← 横paddingを調整 */
   border-radius: 18px;
   box-shadow: 0 0 25px rgba(255, 0, 80, 0.3),
               0 0 35px rgba(0, 242, 234, 0.3);
@@ -127,7 +128,7 @@ footer {
   .profile {
     width: 95%;
     max-width: 380px;
-    padding: 2em 1.5em;
+    padding: 2em 1em; /* ← 横paddingをさらに調整 */
   }
 
   .profile img {
@@ -143,9 +144,9 @@ footer {
 
   body::before,
   body::after {
-    width: 250px;
-    height: 250px;
-    filter: blur(120px);
+    width: 200px;
+    height: 200px;
+    filter: blur(100px);
   }
 }
 
