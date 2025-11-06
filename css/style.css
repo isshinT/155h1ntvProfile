@@ -113,12 +113,16 @@ body::after {
 
 /* ===== フッター ===== */
 footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
   text-align: center;
-  margin-top: 1.5em;
   color: #888;
   font-size: 0.9em;
-  z-index: 2;
+  z-index: 5;
 }
+
 
 /* ===== スマホ対応 ===== */
 @media (max-width: 768px) {
